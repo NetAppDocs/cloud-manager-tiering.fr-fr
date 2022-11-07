@@ -1,0 +1,519 @@
+---
+sidebar: sidebar 
+permalink: faq-cloud-tiering.html 
+keywords: faq, questions, requirements, service connector, object store, object storage, aws, azure, bucket, cluster, aggregate, s3, storage class, standard, inactive data reporting, auto, volume tiering policy, policy, tiering policy, snapshot, cold, inactive, infrequent 
+summary: Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question. 
+---
+= FAQ technique sur NetApp Cloud Tiering
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question.
+
+
+
+== Service de Tiering cloud
+
+Les FAQ suivantes concernent le fonctionnement de Cloud Tiering.
+
+
+
+=== Quels sont les avantages du service NetApp Cloud Tiering ?
+
+NetApp Cloud Tiering répond aux défis liés à la croissance rapide des données, ce qui vous offre de nombreux avantages :
+
+* Extension sans effort du data Center au cloud pour un espace jusqu'à 50 fois plus important
+* L'optimisation du stockage, permettant d'économiser en moyenne 70 % de stockage
+* Le coût total de possession a été réduit de 30 % en moyenne
+* Il n'est pas nécessaire de remanier les applications
+
+
+
+
+=== Quels types de données sont utiles pour le Tiering dans le cloud ?
+
+De fait, toutes les données considérées comme inactives sur des systèmes de stockage primaire et secondaire sont particulièrement bien transférées vers le cloud. Sur les systèmes primaires, ces données peuvent inclure des instantanés, des enregistrements historiques et des projets finis. Sur les systèmes secondaires, cela inclut tous les volumes qui contiennent des copies de données primaires effectuées à des fins de reprise d'activité et de sauvegarde.
+
+
+
+=== Puis-je déplacer les données à la fois à partir des volumes NAS et des volumes SAN ?
+
+Oui, vous pouvez transférer les données de volumes NAS vers un cloud public ou vers des clouds privés, tels que StorageGRID. Lors du Tiering des données accessibles par les protocoles SAN, NetApp recommande l'utilisation de clouds privés, car les protocoles SAN sont plus sensibles aux problèmes de connectivité que NAS.
+
+
+
+=== Quelle est la définition des données inactives ou des données peu utilisées et comment les contrôler ?
+
+Les données inactives sont délimitées : « blocs de volume (métadonnées exclus) qui n'ont pas été utilisés pendant un certain temps ». Le « temps » est déterminé par un attribut de stratégie de hiérarchisation nommé refroidissement-jours.
+
+
+
+=== Le Tiering cloud conserve-t-il les économies en termes d'efficacité du stockage sur le niveau cloud ?
+
+Oui, les fonctionnalités d'efficacité du stockage au niveau des volumes ONTAP, telles que la compression, la déduplication et la compaction, sont conservées lors du déplacement des données vers le Tier cloud.
+
+
+
+=== Quelle est la différence entre FabricPool et NetApp Cloud Tiering ?
+
+FabricPool est la technologie de Tiering d'ONTAP qui peut être gérée de manière automatique via l'interface de ligne de commande et System Manager d'ONTAP, ou gérée en tant que service via le Tiering dans le cloud. Cloud Tiering transforme FabricPool en service géré grâce à des processus d'automatisation avancés, aussi bien sur ONTAP que dans le cloud, pour une meilleure visibilité et un plus grand contrôle sur le Tiering dans les déploiements hybrides et multicloud.
+
+
+
+=== Est-il possible d'utiliser les données hiérarchisées vers le cloud pour la reprise après incident ou pour la sauvegarde/l'archivage ?
+
+Non Les métadonnées du volume ne sont jamais hiérarchisées à partir du Tier de performance, ce qui permet d'accéder directement aux données stockées dans le stockage objet.
+
+Toutefois, il est possible d'utiliser Cloud Tiering pour réaliser des sauvegardes et des reprises après incident à moindre coût en les activant sur des systèmes secondaires et sur des volumes de destination SnapMirror (volumes DP), afin de procéder au Tiering de toutes les données (sans métadonnées), ce qui réduit l'empreinte du data Center et le TCO.
+
+
+
+=== Cloud Tiering s'applique-t-il au niveau du volume ou de l'agrégat ?
+
+La hiérarchisation du cloud est activée au niveau des volumes en associant une règle de Tiering à chaque volume. L'identification des données inactives est effectuée au niveau des blocs.
+
+
+
+=== Comment le Tiering dans le cloud détermine-t-il les blocs à transférer vers le cloud ?
+
+La règle de hiérarchisation associée au volume mécanisme qui contrôle les blocs qui sont hiérarchisés et quand. Cette règle définit le type de blocs de données (snapshots, données utilisateur ou les deux) et la période de refroidissement. Voir link:concept-cloud-tiering.html#volume-tiering-policies["Règles de Tiering des volumes"] pour plus d'informations.
+
+
+
+=== Comment Cloud Tiering affecte-t-il la capacité du volume ?
+
+Cloud Tiering n'a aucun impact sur la capacité du volume, mais sur l'utilisation du Tier de performance de l'agrégat.
+
+
+
+=== Le Tiering cloud permet-il d'activer le reporting des données inactives ?
+
+Oui, NetApp Cloud Tiering active le reporting des données inactives sur chaque agrégat. Ce paramètre nous permet d'identifier la quantité de données inactives pouvant être envoyées vers un stockage objet à faible coût.
+
+
+
+=== Combien de temps faut-il à IDR pour afficher les informations dès que je commence à l'exécuter ?
+
+L'IDR commence à afficher les informations une fois la période de refroidissement configurée terminée. Avec ONTAP 9.7 et les versions antérieures, l'IDR a connu une période de refroidissement non réglable de 31 jours. À partir de ONTAP 9.8, la période de refroidissement de l'IDR peut être configurée jusqu'à 183 jours.
+
+
+
+== Licences et coût
+
+Les FAQ suivantes se rapportent aux licences et aux coûts pour utiliser Cloud Tiering.
+
+
+
+=== Quel est le coût de NetApp Cloud Tiering ?
+
+Lors du Tiering des données inactives dans le cloud public :
+
+* Pour le paiement à l'utilisation (PAYGO), abonnement basé sur l'utilisation : 0.05 $ par Go/mois.
+* Pour l'abonnement annuel (BYOL), abonnement basé sur la durée : à partir de 0.033 $ par Go/mois.
+
+
+Le Tiering des données inactives vers un système NetApp StorageGRID (cloud privé) est gratuit.
+
+
+
+=== Puis-je disposer d'une licence BYOL et d'une licence PAYGO pour le même cluster ONTAP ?
+
+Oui. NetApp Cloud Tiering vous permet d'utiliser une licence BYOL, un abonnement PAYGO ou une combinaison des deux.
+
+
+
+=== Que se passe-t-il si la limite de capacité BYOL est atteinte ?
+
+Si vous atteignez une limite de capacité BYOL, le Tiering des nouvelles données inactives est interrompu alors que toutes les données précédemment hiérarchisées restent accessibles. Si vous avez souscrit un abonnement PAYGO au modèle _Cloud Manager - Deploy & Manage Cloud Data Services_, les nouvelles données inactives continueront à être hiérarchisées vers le stockage objet et vous payez uniquement ce supplément à l'utilisation.
+
+
+
+=== La licence Cloud Tiering inclut-elle les frais de sortie du fournisseur de cloud ?
+
+Non, ce n'est pas le cas.
+
+
+
+=== La réhydratation des systèmes sur site est-elle soumise aux coûts de sortie facturés par les fournisseurs cloud ?
+
+Oui. Toutes les lectures effectuées à partir du cloud public sont soumises à des frais de sortie.
+
+
+
+=== Comment estimer les frais liés au cloud ? Existe-t-il un mode « et si » pour NetApp Cloud Tiering ?
+
+Pour évaluer les frais d'hébergement de vos données par un fournisseur de cloud, utilisez les outils de calcul : https://calculator.aws/#/["AWS"], https://azure.microsoft.com/en-us/pricing/calculator/["Azure"] et https://cloud.google.com/products/calculator["Google Cloud"].
+
+
+
+=== Les fournisseurs cloud facture-ils des frais supplémentaires pour la lecture et la récupération des données depuis le stockage objet vers le stockage sur site ?
+
+Oui. Fait https://aws.amazon.com/s3/pricing/["Tarification Amazon S3"], https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Tarification Blob par bloc"], et https://cloud.google.com/storage/pricing["Tarifs du stockage cloud"] pour connaître les frais supplémentaires engagés pour la lecture/récupération des données.
+
+
+
+=== Comment estimer les économies de mes volumes et obtenir un rapport sur les données inactives avant d'activer la solution Cloud Tiering ?
+
+Pour obtenir un devis, il vous suffit d'ajouter votre cluster ONTAP à BlueXP et de le vérifier via le tableau de bord des clusters NetApp Cloud Tiering, qui se trouve dans l'onglet Tiering. Lorsque le reporting de données inactives est désactivé ou n'a pas encore été activé depuis longtemps, Cloud Tiering utilise une constante de 70 % pour calculer les économies estimées. Une fois les données IDR disponibles, Cloud Tiering met à jour les économies réalisées et permet de réaliser des chiffres précis.
+
+
+
+== ONTAP
+
+Les questions suivantes concernent ONTAP.
+
+
+
+=== Quelles sont les versions de ONTAP prises en charge par NetApp Cloud Tiering ?
+
+NetApp Cloud Tiering prend en charge ONTAP version 9.2 et ultérieure.
+
+
+
+=== Quels types de systèmes ONTAP sont pris en charge ?
+
+NetApp Cloud Tiering est pris en charge avec les clusters AFF, FAS et ONTAP Select à un seul nœud et haute disponibilité. Les clusters des configurations FabricPool Mirror et MetroCluster sont également pris en charge.
+
+
+
+=== Est-il possible de classer les données depuis les systèmes FAS avec des disques durs uniquement ?
+
+Oui, à partir de ONTAP 9.8, vous pouvez classer les données à partir des volumes hébergés sur des agrégats HDD.
+
+
+
+=== Est-il possible de classer les données à partir d'un AFF joint à un cluster contenant des nœuds FAS avec des disques durs ?
+
+Oui. Cloud Tiering peut être configuré pour hiérarchiser les volumes hébergés sur tous les agrégats. La configuration de Tiering des données n'est pas pertinente en fonction du type de contrôleur utilisé, que le cluster soit hétérogène ou non.
+
+
+
+=== Qu'en est-il de Cloud Volumes ONTAP ?
+
+Si vous disposez de systèmes Cloud Volumes ONTAP, vous les trouverez dans le tableau de bord de NetApp Cloud Tiering ainsi qu'une vue complète du Tiering des données dans votre infrastructure de cloud hybride. Toutefois, les systèmes Cloud Volumes ONTAP sont en lecture seule depuis le Tiering dans le cloud. Vous ne pouvez pas configurer le Tiering des données dans Cloud Volumes ONTAP à partir de NetApp Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html["Vous configurez le Tiering pour Cloud Volumes ONTAP à partir de l'environnement de travail dans BlueXP"^].
+
+
+
+=== Quelles autres exigences sont nécessaires pour mes clusters ONTAP ?
+
+Cela dépend de l'endroit où vous procédez au Tiering des données inactives. Pour en savoir plus, consultez les liens suivants :
+
+* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters["Tiering des données vers Amazon S3"]
+* link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Tiering des données vers le stockage Azure Blob"]
+* link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters["Tiering des données vers Google Cloud Storage"]
+* link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters["Tiering des données vers StorageGRID"]
+* link:task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters["Tiering des données vers le stockage objet S3"]
+
+
+
+
+== Stockage objet
+
+Les questions suivantes se rapportent au stockage objet.
+
+
+
+=== Quels fournisseurs de stockage objet sont pris en charge ?
+
+NetApp Cloud Tiering prend en charge plusieurs fournisseurs de stockage objet :
+
+* Amazon S3
+* Microsoft Azure Blob
+* Google Cloud Storage
+* NetApp StorageGRID
+* Stockage objet compatible S3
+* Stockage objet IBM Cloud (la configuration FabricPool doit être effectuée via System Manager ou l'interface de ligne de commande ONTAP)
+
+
+
+
+=== Est-il possible d'utiliser un compartiment/conteneur adapté à mes besoins ?
+
+Oui, c'est possible. Une fois le Tiering configuré, vous avez la possibilité d'ajouter un nouveau compartiment/conteneur ou de sélectionner un compartiment/conteneur existant.
+
+
+
+=== Quelles régions sont prises en charge ?
+
+* link:reference-aws-support.html["Régions AWS prises en charge"]
+* link:reference-azure-support.html["Régions Azure prises en charge"]
+* link:reference-google-support.html["Régions Google Cloud prises en charge"]
+
+
+
+
+=== Quelles sont les classes de stockage S3 prises en charge ?
+
+Cloud Tiering prend en charge le Tiering des données vers les classes de stockage _Standard_, _Standard-Infrequent Access_, _One zone-Infrequent Access_, _Intelligent Tiering_ et _Glacier Instant Retrieval_. Voir link:reference-aws-support.html["Classes de stockage S3 prises en charge"] pour en savoir plus.
+
+
+
+=== Pourquoi Amazon S3 Glacier est-il flexible et S3 Glacier Deep Archive non pris en charge par le Tiering cloud ?
+
+La raison principale pour laquelle Amazon S3 Glacier flexible et S3 Glacier Deep Archive ne sont pas pris en charge est que Cloud Tiering est conçu comme une solution de Tiering haute performance. Les données doivent donc être disponibles en continu et rapidement accessibles pour être récupérées. Avec les fonctionnalités flexibles de S3 Glacier et d'archivage profond S3 Glacier, la récupération des données peut durer entre quelques minutes et 48 heures.
+
+
+
+=== Est-il possible d'utiliser d'autres services de stockage objet compatibles S3, comme Wasabi, avec Cloud Tiering ?
+
+Oui. La configuration du stockage objet compatible S3 via l'interface de Tiering est prise en charge pour les clusters qui utilisent ONTAP 9.8 et versions ultérieures. link:task-tiering-onprem-s3-compat.html["Pour en savoir plus, cliquez ici"].
+
+
+
+=== Quels tiers d'accès Azure Blob sont pris en charge ?
+
+Cloud Tiering prend en charge le Tiering des données vers les tiers d'accès _Hot_ ou _Cool_ de vos données inactives. Voir link:reference-azure-support.html["Tiers d'accès Azure Blob pris en charge"] pour en savoir plus.
+
+
+
+=== Quelles sont les classes de stockage prises en charge par Google Cloud Storage ?
+
+Cloud Tiering prend en charge le Tiering des données vers les classes de stockage _Standard_, _Nearline_, _Coldline_ et _Archive_. Voir link:reference-google-support.html["Classes de stockage Google Cloud prises en charge"] pour en savoir plus.
+
+
+
+=== Le Tiering dans le cloud prend-il en charge l'utilisation des règles de gestion du cycle de vie ?
+
+Oui. Vous pouvez activer la gestion du cycle de vie de sorte que Cloud Tiering transfère les données d'un niveau d'accès/classe de stockage par défaut vers un Tier plus économique après un certain nombre de jours. La règle de cycle de vie s'applique à tous les objets du compartiment sélectionné pour Amazon S3 et Google Cloud Storage, et à tous les conteneurs du compte de stockage sélectionné pour Azure Blob.
+
+
+
+=== NetApp Cloud Tiering utilise-t-il un magasin d'objets pour l'ensemble du cluster ou un par agrégat ?
+
+Dans une configuration typique, il existe un magasin d'objets pour l'ensemble du cluster. À partir d'août 2022, vous pouvez utiliser la page *Advanced Setup* pour ajouter des magasins d'objets supplémentaires pour un cluster, puis associer plusieurs magasins d'objets à d'autres agrégats, ou joindre deux magasins d'objets à un agrégat pour la mise en miroir.
+
+
+
+=== Est-il possible de fixer plusieurs compartiments au même agrégat ?
+
+Il est possible de connecter jusqu'à deux compartiments par agrégat à des fins de mise en miroir, où les données inactives sont réparties de manière synchrone sur les deux compartiments. Ces compartiments peuvent être de différents fournisseurs et emplacements. À partir d'août 2022, vous pouvez utiliser la page *Advanced Setup* pour attacher deux magasins d'objets à un seul agrégat.
+
+
+
+=== Est-il possible de fixer plusieurs compartiments à différents agrégats du même cluster ?
+
+Oui. La meilleure pratique générale est de connecter un compartiment unique à plusieurs agrégats. Toutefois, lorsque vous utilisez le cloud public, les IOPS sont maximales pour les services de stockage objet. Plusieurs compartiments doivent donc être pris en compte.
+
+
+
+=== Que se passe-t-il des données hiérarchisées lorsque vous migrez un volume d'un cluster vers un autre ?
+
+Lorsque vous migrez un volume d'un cluster vers un autre, toutes les données inactives sont lues à partir du Tier cloud. L'emplacement d'écriture sur le cluster de destination dépend de l'activation ou non de la hiérarchisation et du type de règle de Tiering utilisé sur les volumes source et de destination.
+
+
+
+=== Que se passe-t-il des données hiérarchisées lorsque vous déplacez un volume d'un nœud vers un autre dans le même cluster ?
+
+Si l'agrégat de destination ne dispose pas d'un niveau de cloud associé, les données sont lues à partir du Tier cloud de l'agrégat source et écrites intégralement sur le niveau local de l'agrégat de destination. Si l'agrégat de destination dispose d'un Tier cloud associé, les données sont lues depuis le Tier cloud de l'agrégat source et écrites d'abord sur le Tier local de l'agrégat de destination pour faciliter la mise en service rapide. Ensuite, elle est écrite sur le Tier cloud, en fonction de la règle de Tiering utilisée.
+
+Depuis ONTAP 9.6, si l'agrégat de destination utilise le même Tier cloud que l'agrégat source, les données inactives ne sont pas retransférées vers le Tier local.
+
+
+
+=== Comment rapatrier les données hiérarchisées sur site vers le Tier de performance ?
+
+L'écriture différée est généralement effectuée sur les lectures et dépend du type de règle de hiérarchisation. Avant ONTAP 9.8, l'écriture du volume entier peut être effectuée avec une opération _volume Move_. À partir de ONTAP 9.8, l'interface utilisateur de Tiering dispose d'options permettant de *ramener toutes les données* ou *rétablir le système de fichiers actif*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier["Découvrez comment retransférer les données vers un Tier de performance"].
+
+
+
+=== En cas de remplacement d'un contrôleur AFF/FAS existant par un nouveau contrôleur, les données hiérarchisées seront-elles migrées sur site ?
+
+Non Au cours de la procédure de « remplacement de tête », la seule chose qui change est la propriété de l'agrégat. Il sera alors remplacé par le nouveau contrôleur sans déplacer de données.
+
+
+
+=== Est-il possible d'utiliser la console du fournisseur cloud ou les explorateurs de stockage objet pour examiner les données à plusieurs niveaux dans le compartiment ? Puis-je utiliser les données stockées dans le stockage objet directement sans ONTAP ?
+
+Non Les objets construits et hiérarchisés dans le cloud ne contiennent pas un seul fichier mais jusqu'à 1,024 blocs de 4 Ko à partir de plusieurs fichiers. Les métadonnées d'un volume restent toujours sur le niveau local.
+
+
+
+== Connecteurs
+
+Les questions suivantes concernent le connecteur BlueXP.
+
+
+
+=== Quel est le connecteur ?
+
+Il s'agit d'un logiciel exécuté sur une instance de calcul dans votre compte cloud ou sur site, permettant ainsi à BlueXP de gérer les ressources cloud de manière sécurisée. Pour utiliser le service NetApp Cloud Tiering, vous devez déployer un connecteur.
+
+
+
+=== Où le connecteur doit-il être installé ?
+
+* Lorsque le Tiering des données vers S3, le connecteur peut résider dans un VPC AWS ou sur votre site.
+* Lors du Tiering des données vers le stockage Blob, le connecteur peut résider dans un Azure VNet ou sur votre site.
+* Lorsque vous effectuez le Tiering des données vers Google Cloud Storage, le connecteur doit résider dans un VPC Google Cloud Platform.
+* Lors du Tiering des données vers un système StorageGRID ou d'autres fournisseurs de stockage compatibles S3, ce connecteur doit résider sur votre site.
+
+
+
+
+=== Puis-je déployer la connexion sur site ?
+
+Oui. Le logiciel Connector peut être téléchargé et installé manuellement sur un hôte Linux de votre réseau. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["Découvrez comment installer le connecteur dans vos locaux"].
+
+
+
+=== Un compte avec fournisseur de services cloud est-il nécessaire avant d'utiliser NetApp Cloud Tiering ?
+
+Oui. Vous devez disposer d'un compte avant de pouvoir définir le stockage objet à utiliser. Un compte parmi un fournisseur de stockage cloud est également nécessaire pour configurer le connecteur dans le cloud sur un VPC ou vNet.
+
+
+
+=== Quelles sont les conséquences en cas de défaillance du connecteur ?
+
+En cas de défaillance des connecteurs, seule la visibilité dans les environnements à plusieurs niveaux est affectée. Toutes les données sont accessibles et les données inactives nouvellement identifiées sont automatiquement transférées vers le stockage objet.
+
+
+
+== Règles de hiérarchisation
+
+
+
+=== Quelles sont les règles de hiérarchisation disponibles ?
+
+Il existe quatre règles de hiérarchisation :
+
+* Aucune : classifie toutes les données comme toujours actives et empêche l'ensemble des données provenant du volume déplacé vers le stockage objet.
+* Snapshots inactifs (Snapshot uniquement) : seuls les blocs de snapshots inactifs sont déplacés vers le stockage objet.
+* Données utilisateur inactives et copies Snapshot (Auto) : les blocs de données inactives et les blocs de données des utilisateurs inactives sont déplacés vers le stockage objet.
+* Toutes les données utilisateur (All) : classe toutes les données inactives ; déplace immédiatement la totalité du volume vers le stockage objet.
+
+
+link:concept-cloud-tiering.html#volume-tiering-policies["En savoir plus sur les règles de Tiering"].
+
+
+
+=== À quel moment mes données sont-elles considérées comme inactives ?
+
+Étant donné que le Tiering des données s'effectue au niveau des blocs, un bloc de données est considéré comme froid après l'avoir accédé pendant une certaine période, qui est défini par l'attribut minimum-refroidissement-jours de la règle de hiérarchisation. La plage applicable est de 2-63 jours avec ONTAP 9.7 et versions antérieures, ou 2-183 jours avec ONTAP 9.8.
+
+
+
+=== Quelle est la période de refroidissement par défaut pour les données avant leur placement dans le Tier cloud ?
+
+La période de refroidissement par défaut de la règle Snapshot froid est de 2 jours, tandis que la période de refroidissement par défaut des données utilisateur inactives et des snapshots est de 31 jours. Le paramètre jours de refroidissement n'est pas applicable à la règle de hiérarchisation tous les niveaux.
+
+
+
+=== Toutes les données hiérarchisées sont-elles récupérées dans le stockage objet lorsque je effectue une sauvegarde complète ?
+
+Pendant la sauvegarde complète, toutes les données inactives sont lues. La récupération des données dépend de la règle de Tiering utilisée. Lorsque vous utilisez les règles Snapshot et toutes les données utilisateur inactives, les données inactives ne sont pas écrites à nouveau dans le Tier de performance. Lors de l'utilisation de la règle snapshots inactifs, les blocs à froid ne sont récupérés que si un ancien snapshot est utilisé pour la sauvegarde.
+
+
+
+=== Pouvez-vous choisir une taille de Tiering par volume ?
+
+Non Vous pouvez cependant choisir les volumes qui peuvent bénéficier d'un Tiering, le type de données à placer et la période de refroidissement. Cette opération consiste à associer une règle de hiérarchisation à ce volume.
+
+
+
+=== La stratégie toutes les données utilisateur est-elle la seule option pour les volumes de protection des données ?
+
+Non Des volumes de protection des données (DP) peuvent être associés à l'une des trois règles disponibles. Le type de règle utilisée sur les volumes source et de destination détermine l'emplacement d'écriture des données.
+
+
+
+=== La réinitialisation de la règle de Tiering d'un volume à aucun réhydrater les données inactives ou empêche-t-elle simplement le déplacement des blocs inactifs vers le cloud ?
+
+Aucune réhydratation n'a lieu lors de la réinitialisation d'une règle de Tiering, mais elle empêche la migration vers le Tier cloud de nouveaux blocs peu sollicités.
+
+
+
+=== Après le Tiering des données dans le cloud, est-il possible de modifier la règle de Tiering ?
+
+Oui. Le comportement après la modification dépend de la nouvelle stratégie associée.
+
+
+
+=== Que dois-je faire si je veux m'assurer que certaines données ne sont pas déplacées vers le cloud ?
+
+N'associez pas une règle de Tiering au volume qui contient ces données.
+
+
+
+=== Où sont stockées les métadonnées des fichiers ?
+
+Les métadonnées d'un volume sont toujours stockées localement, sur le Tier de performance.- elles ne sont jamais envoyées vers le cloud.
+
+
+
+== Mise en réseau et sécurité
+
+Les questions suivantes concernent la mise en réseau et la sécurité.
+
+
+
+=== Quelles sont les exigences en matière de mise en réseau ?
+
+* Le cluster ONTAP établit une connexion HTTPS via le port 443 vers votre fournisseur de stockage objet.
++
+Le ONTAP lit et écrit les données vers et à partir du stockage objet. Le stockage objet ne démarre jamais, il répond simplement.
+
+* Pour StorageGRID, le cluster ONTAP établit une connexion HTTPS vers StorageGRID via un port spécifié par l'utilisateur (le port est configurable lors de la configuration du Tiering).
+* Un connecteur nécessite une connexion HTTPS sortante via le port 443 vers vos clusters ONTAP, vers le magasin d'objets et vers le service Cloud Tiering.
+
+
+Pour plus de détails, voir :
+
+* link:task-tiering-onprem-aws.html["Tiering des données vers Amazon S3"]
+* link:task-tiering-onprem-azure.html["Tiering des données vers le stockage Azure Blob"]
+* link:task-tiering-onprem-gcp.html["Tiering des données vers Google Cloud Storage"]
+* link:task-tiering-onprem-storagegrid.html["Tiering des données vers StorageGRID"]
+* link:task-tiering-onprem-s3-compat.html["Tiering des données vers le stockage objet S3"]
+
+
+
+
+=== Quels outils puis-je utiliser pour la surveillance et la création de rapports afin de gérer les données inactives stockées dans le cloud ?
+
+Autre que NetApp Cloud Tiering, https://docs.netapp.com/us-en/active-iq-unified-manager/["Active IQ Unified Manager"^] et https://docs.netapp.com/us-en/active-iq/index.html["Conseiller digital Active IQ"^] peut être utilisé pour la surveillance et la création de rapports.
+
+
+
+=== Quelles conséquences en cas de défaillance de la liaison réseau au fournisseur cloud ?
+
+En cas de défaillance réseau, le niveau de performance local reste en ligne et les données actives restent accessibles. Cependant, les blocs qui ont déjà été déplacés vers le Tier cloud seront inaccessibles. Les applications reçoivent un message d'erreur lors de la tentative d'accès à ces données. Une fois la connectivité rétablie, toutes les données sont accessibles de manière transparente.
+
+
+
+=== Y a-t-il une recommandation de bande passante réseau ?
+
+La latence de lecture de la technologie de Tiering FabricPool sous-jacente dépend de la connectivité au Tier cloud. Bien que la hiérarchisation fonctionne sur n'importe quelle bande passante, il est recommandé de placer les LIF intercluster sur des ports 10 Gbit/s pour assurer des performances adéquates. Il n'y a pas de recommandations ni de limitations de bande passante pour le connecteur.
+
+
+
+=== Y a-t-il une latence lorsqu'un utilisateur tente d'accéder aux données hiérarchisées ?
+
+Oui. Les tiers cloud ne peuvent pas offrir la même latence que le Tier local, car la latence dépend de la connectivité. Pour estimer la latence et le débit d'un magasin d'objets, NetApp Cloud Tiering fournit un test de performances cloud (basé sur le profileur du magasin d'objets ONTAP) qui peut être utilisé après la connexion du magasin d'objets et avant la configuration du Tiering.
+
+
+
+=== Comment mes données sont-elles sécurisées ?
+
+Le chiffrement AES-256-GCM est géré à la fois sur les tiers de performance et dans le cloud. Le chiffrement TLS 1.2 est utilisé pour chiffrer les données sur le réseau lors de leur déplacement entre les tiers, et pour chiffrer les communications entre le connecteur et le cluster ONTAP et le magasin d'objets.
+
+
+
+=== Ai-je besoin d'un port Ethernet installé et configuré sur mon AFF ?
+
+Oui. Un LIF intercluster doit être configuré sur un port ethernet, sur chaque nœud d'une paire haute disponibilité qui héberge les volumes avec les données que vous prévoyez de mettre en niveau vers le cloud. Pour en savoir plus, consultez la section exigences du fournisseur cloud dans lequel vous prévoyez de transférer des données.
+
+
+
+=== Quelles sont les autorisations requises ?
+
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Pour Amazon, vous devez disposer d'autorisations pour gérer le compartiment S3"].
+* Pour Azure, aucune autorisation supplémentaire n'est nécessaire en dehors des autorisations que vous devez fournir à BlueXP.
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Pour Google Cloud, des autorisations d'administrateur de stockage sont nécessaires pour un compte de service doté de clés d'accès au stockage"].
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["Pour StorageGRID, des autorisations S3 sont nécessaires"].
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["Pour un stockage objet compatible S3, des autorisations S3 sont nécessaires"].
+

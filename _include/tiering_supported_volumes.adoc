@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+Volumes et agrégats pris en charge:: Le nombre total de volumes que vous pouvez effectuer le Tiering dans Cloud Tiering peut être inférieur au nombre de volumes sur votre système ONTAP. En effet, certains volumes ne peuvent pas être hiérarchisés à partir de certains agrégats. Consultez la documentation ONTAP de https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["Fonctionnalité ou fonctionnalités non prises en charge par FabricPool"^].
+

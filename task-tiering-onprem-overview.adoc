@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-overview.html 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+summary: 'NetApp Cloud Tiering fournit une vue globale du Tiering des données depuis chacun de vos clusters sur site. Cette vue d"ensemble fournit une image claire de votre environnement et vous permet de prendre les mesures appropriées.' 
+---
+= Obtenez une vue d'ensemble du Tiering des données sur les clusters
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+NetApp Cloud Tiering fournit une vue globale du Tiering des données depuis chacun de vos clusters sur site. Cette vue d'ensemble fournit une image claire de votre environnement et vous permet de prendre les mesures appropriées.
+
+Cliquez simplement sur *Tiering > Présentation sur site*. NetApp Cloud Tiering fournit les informations suivantes sur votre environnement :
+
+image:screenshot_tiering_onprem_overview.gif["Copie d'écran de la page de présentation sur site."]
+
+Clusters actifs:: Le nombre de clusters qui effectuent actuellement un Tiering des données vers le cloud, les clusters qui ne transfèrent pas les données vers le cloud, et le nombre de clusters qui ne prennent pas en charge le Tiering des données.
+Présentation des données:: Quantité de données envoyées vers le cloud et quantité de données actives et inactives sur le cluster
+Total des économies:: Vous avez économisé le coût du Tiering des données sur le cloud, ainsi que la quantité de budget que vous pouvez réaliser grâce au Tiering des données plus nombreuses dans le cloud.
+Stratégies:: Nombre de fois où chaque règle de hiérarchisation a été appliquée à un volume.
+Abonnements Marketplace:: Nombre de clusters associés à chaque type d'abonnement Marketplace et indication de l'état de votre abonnement.
+

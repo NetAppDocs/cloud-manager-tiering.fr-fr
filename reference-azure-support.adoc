@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: reference-azure-support.html 
+keywords: microsoft azure, azure, hot, access tier, cold, regions 
+summary: 'Cloud Tiering prend en charge deux tiers d"accès et la plupart des régions.' 
+---
+= Tiers et régions d'accès Azure Blob pris en charge
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Tiering prend en charge deux tiers d'accès et la plupart des régions.
+
+
+
+== Tiers d'accès Azure Blob pris en charge
+
+Lorsque vous configurez le Tiering des données sur Azure, Cloud Tiering utilise automatiquement le Tier d'accès _Hot_ pour vos données inactives. Cloud Tiering peut appliquer une règle de cycle de vie de sorte que les données soient transitions entre le niveau d'accès _Hot_ et le niveau d'accès _Cool_ au bout d'un certain nombre de jours.
+
+Si vous ne choisissez pas le niveau d'accès _Cool_, les données restent dans le niveau d'accès _Hot_ et aucune règle n'est appliquée.
+
+Lorsque vous configurez une règle de cycle de vie Cloud Tiering, vous ne devez pas configurer de règles de cycle de vie lors de la configuration du conteneur dans votre compte Azure.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Découvrez les niveaux d'accès d'Azure Blob"^].
+
+
+
+== Régions Azure prises en charge
+
+NetApp Cloud Tiering prend en charge les régions Azure suivantes.
+
+
+
+=== Afrique
+
+* Afrique du Sud Nord
+
+
+
+
+=== Asie Pacifique
+
+* Australie Est
+* Australie Sud-Est
+* Asie de l'Est
+* Japon Est
+* Japon Ouest
+* Corée Centrale
+* Corée du Sud
+* Asie du Sud-Est
+
+
+
+
+=== Europe
+
+* France centrale
+* Allemagne de l'ouest du centre
+* Allemagne du Nord
+* Europe du Nord
+* Royaume-Uni Sud
+* Royaume-Uni Ouest
+* Europe de l'Ouest
+
+
+
+
+=== Amérique du Nord
+
+* Canada Central
+* Canada Est
+* Centre DES ÉTATS-UNIS
+* Est-É.-U.
+* Est DES ÉTATS-UNIS 2
+* Centre-nord des États-Unis
+* Centre-sud des États-Unis
+* Ouest des États-Unis
+* Ouest des États-Unis 2
+* Centre Ouest des États-Unis
+
+
+
+
+=== Amérique du Sud
+
+* Brésil Sud
+

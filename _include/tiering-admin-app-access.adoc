@@ -1,0 +1,6 @@
+= 
+:allow-uri-read: 
+
+
+Paramètre d'accès à l'application requis:: L'utilisateur administrateur du cluster doit disposer d'un accès à l'application « console ». Vous pouvez le vérifier à l'aide de la commande ONTAP `security login show`. « Console » doit apparaître dans la colonne _application_ pour l'utilisateur « admin ». Utilisez le `security login create` commande permettant d'ajouter l'accès aux applications de console si nécessaire. https://docs.netapp.com/us-en/ontap-cli-9111/security-login-create.html["Pour plus de détails, reportez-vous aux commandes « Security login »"].
+

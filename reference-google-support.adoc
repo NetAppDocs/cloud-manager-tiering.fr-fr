@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference-google-support.html 
+keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive 
+summary: NetApp Cloud Tiering prend en charge plusieurs classes de stockage Google Cloud ainsi que la plupart des régions. 
+---
+= Classes et régions de stockage Google Cloud prises en charge
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering prend en charge plusieurs classes de stockage Google Cloud ainsi que la plupart des régions.
+
+
+
+== Classes de stockage GCP prises en charge
+
+Lorsque vous configurez le Tiering des données dans GCP, Cloud Tiering utilise automatiquement la classe de stockage _Standard_ pour vos données inactives. NetApp Cloud Tiering peut appliquer une règle de cycle de vie afin que les données soient transitions de la classe de stockage _Standard_ vers d'autres classes de stockage après un certain nombre de jours. Vous pouvez choisir parmi les classes de stockage suivantes :
+
+* Nearline
+* Ligne de refroidissement
+* Archivage
+
+
+Si vous ne choisissez pas une autre classe de stockage, les données restent dans la classe de stockage _Standard_ et aucune règle n'est appliquée.
+
+Lorsque vous configurez une règle de cycle de vie Cloud Tiering, vous ne devez pas configurer de règles de cycle de vie lors de la configuration du compartiment dans votre compte Google.
+
+https://cloud.google.com/storage/docs/storage-classes["Découvrez les classes de stockage Google Cloud"^].
+
+
+
+== Régions Google Cloud prises en charge
+
+Cloud Tiering prend en charge les régions suivantes.
+
+
+
+=== Amériques
+
+* Iowa
+* Los Angeles
+* Montréal
+* N. Virginie
+* Oregon
+* Sao Paulo
+* Caroline du Sud
+
+
+
+
+=== Asie Pacifique
+
+* Hong Kong
+* Mumbai
+* Osaka
+* Singapour
+* Sydney
+* Taïwan
+* Tokyo
+
+
+
+
+=== Europe
+
+* Belgique
+* Finlande
+* Francfort
+* Londres
+* Pays-Bas
+* Zurich
+

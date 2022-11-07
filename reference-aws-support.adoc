@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: reference-aws-support.html 
+keywords: aws, amazon, s3, support, regions, storage classes 
+summary: NetApp Cloud Tiering prend en charge plusieurs classes de stockage S3 ainsi que la plupart des régions. 
+---
+= Classes et régions de stockage S3 prises en charge
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering prend en charge plusieurs classes de stockage S3 ainsi que la plupart des régions.
+
+
+
+== Classes de stockage S3 prises en charge
+
+Lorsque vous configurez le Tiering des données sur AWS, Cloud Tiering utilise automatiquement la classe de stockage _Standard_ pour vos données inactives. NetApp Cloud Tiering peut appliquer une règle de cycle de vie afin que les données soient transitions de la classe de stockage _Standard_ vers une autre classe de stockage après un certain nombre de jours. Vous pouvez choisir parmi les classes de stockage suivantes :
+
+* Accès autonome et peu fréquent
+* Un seul accès à Zone-Infrequent
+* Hiérarchisation intelligente (dans laquelle AWS déplace automatiquement les données entre deux niveaux (accès fréquent et Infrequent Access), en cas de changement de modèle d'accès)
+* Récupération instantanée Glacier
+
+
+Si vous ne choisissez pas une autre classe de stockage, les données restent dans la classe de stockage _Standard_ et aucune règle n'est appliquée.
+
+Lorsque vous configurez une règle de cycle de vie Cloud Tiering, vous ne devez pas configurer de règles de cycle de vie lors de la configuration du compartiment dans votre compte AWS.
+
+https://aws.amazon.com/s3/storage-classes/["Découvrez les classes de stockage S3"^].
+
+
+
+== Régions AWS prises en charge
+
+NetApp Cloud Tiering prend en charge plusieurs régions AWS :
+
+
+
+=== Asie Pacifique
+
+* Mumbai
+* Séoul
+* Singapour
+* Sydney
+* Tokyo
+
+
+
+
+=== Europe
+
+* Francfort
+* Irlande
+* Londres
+* Paris
+* Stockholm
+
+
+
+
+=== Amérique du Nord
+
+* Canada Central
+* US East (N. Virginie)
+* États-Unis Est (Ohio)
+* US West (N. Californie)
+* US West (Oregon)
+
+
+
+
+=== Amérique du Sud
+
+* São Paulo
+

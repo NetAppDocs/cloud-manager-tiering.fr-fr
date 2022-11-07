@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-test.html 
+keywords: throughput, latency, tiering performance, cloud performance test, tiering test, object storage performance 
+summary: 'Exécutez un test de performances cloud pour mesurer la latence du réseau et le débit d"un cluster ONTAP vers un magasin d"objets, avant et après la configuration du Tiering des données.' 
+---
+= Mesure de la latence du réseau et des performances du débit
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Exécutez un test de performances cloud pour mesurer la latence du réseau et le débit d'un cluster ONTAP vers un magasin d'objets, avant et après la configuration du Tiering des données. Le test identifie également les défaillances qui se sont produites.
+
+Voici quelques exemples de résultats de performances :
+
+image:screenshot_cloud_performance_test.gif["Copie d'écran des résultats du cluster pour le test de performance du cloud."]
+
+Il est recommandé d'exécuter ce contrôle lorsque le cluster est inférieur à 50 % d'utilisation du CPU.
+
+.Les étapes pour un cluster qui a été configuré pour le Tiering hasn&#8217;t
+. Dans le menu de navigation de gauche, sélectionnez *mobilité > hiérarchisation*.
+. Dans *Cluster Dashboard*, cliquez sur l'icône de menu d'un cluster et sélectionnez *Cloud Performance Test*.
+. Vérifiez les détails et cliquez sur *Continuer*.
+. Suivez les invites pour fournir les informations requises.
++
+Les informations que vous devez fournir sont les mêmes que si vous deviez configurer la hiérarchisation sur le cluster.
+
+. L'assistant de volumes de Tier peut éventuellement se poursuivre pour terminer l'installation.
+
+
+.Étapes d'un cluster qui a été configuré pour la hiérarchisation
+. Dans le menu de navigation de gauche, sélectionnez *mobilité > hiérarchisation*.
+. Dans *Cluster Dashboard*, cliquez sur l'icône de menu d'un cluster et sélectionnez *Cloud Performance Test*.
+. Sélectionnez un nœud dans la liste déroulante.
+. Consultez les résultats ou revérifiez les performances.
+

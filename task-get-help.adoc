@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: task-get-help.html 
+keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue 
+summary: 'NetApp prend en charge BlueXP de plusieurs façons. De nombreuses options d"auto-assistance gratuites sont disponibles 24 h/24 et 7 j/7, comme des articles de la base de connaissances (KB) et un forum communautaire. Votre inscription au support inclut un support technique à distance via la création de tickets en ligne.' 
+---
+= Obtenez de l'aide
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+NetApp prend en charge BlueXP et ses services cloud de différentes manières. De nombreuses options d'auto-assistance gratuites sont disponibles 24 h/24 et 7 j/7, comme des articles de la base de connaissances (KB) et un forum communautaire. Votre inscription au support inclut un support technique à distance via la création de tickets en ligne.
+
+
+
+== Auto-assistance
+
+Ces options sont disponibles gratuitement, 24 heures sur 24, 7 jours sur 7 :
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services["Base de connaissances"^]
++
+Recherchez dans la base de connaissances BlueXP des articles utiles pour résoudre les problèmes.
+
+* http://community.netapp.com/["Communautés"^]
++
+Rejoignez la communauté BlueXP pour suivre des discussions en cours ou en créer de nouveaux.
+
+* Documentation
++
+La documentation BlueXP que vous consultez actuellement.
+
+* Courrier électronique :ng-cloudmanager-feedback@netapp.com[E-mail de commentaires]
++
+Nous accordons une grande importance à vos commentaires. Envoyez vos commentaires pour nous aider à améliorer BlueXP.
+
+
+
+
+
+== Support NetApp
+
+Outre les options d'auto-support mentionnées ci-dessus, vous pouvez travailler avec un spécialiste du support NetApp pour résoudre tous les problèmes après avoir activé le service de support.
+
+Pour utiliser la fonction *Créer un cas*, vous devez d'abord effectuer un enregistrement unique de votre numéro de série d'ID de compte BlueXP (par exemple 960xxxx) avec NetApp. link:task-support-registration.html["Découvrez comment vous inscrire à de l'aide"].
+
+.Étapes
+. Dans BlueXP, cliquez sur *aide > support*.
+. Choisissez l'une des options disponibles sous support technique :
++
+.. Cliquez sur *appelez-nous* si vous souhaitez parler avec quelqu'un au téléphone. Vous serez dirigé vers une page netapp.com qui répertorie les numéros de téléphone que vous pouvez appeler.
+.. Cliquez sur *Créer un dossier* pour ouvrir un dossier auprès des spécialistes du support NetApp :
++
+*** *Compte sur le site de support NetApp* : sélectionnez le compte NSS applicable associé à la personne qui ouvre le dossier de support. Cette personne sera le contact principal avec NetApp en plus de l'e-mail ci-dessous.
++
+Si vous ne voyez pas votre compte NSS, vous pouvez accéder à l'onglet *NSS Management* de la section support de BlueXP pour l'ajouter.
+
+*** *Service* : sélectionnez le service auquel le problème est associé. Par exemple, BlueXP lorsqu'il est spécifique à un problème de support technique avec des flux de travail ou des fonctionnalités au sein du service.
+*** *Environnement de travail* : si applicable au stockage, sélectionnez *Cloud Volumes ONTAP* ou *sur site*, puis l'environnement de travail associé.
++
+La liste des environnements de travail est comprise dans le cadre du compte, de l'espace de travail et du connecteur BlueXP que vous avez sélectionnés dans la bannière supérieure du service.
+
+*** *Priorité du cas* : choisissez la priorité du cas, qui peut être faible, Moyen, élevé ou critique.
++
+Pour en savoir plus sur ces priorités, passez votre souris sur l'icône d'information située à côté du nom du champ.
+
+*** *Description du problème* : fournir une description détaillée de votre problème, y compris les messages d'erreur ou les étapes de dépannage applicables que vous avez effectués.
+*** *Adresses e-mail supplémentaires*: Entrez des adresses e-mail supplémentaires si vous souhaitez informer quelqu'un d'autre de ce problème.
++
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/media/screenshot-create-case.png["Capture d'écran du formulaire Créer un dossier qui vous permet de créer un dossier auprès du support NetApp."]
+
+
+
+
+
+
+
+Une fenêtre contextuelle contenant votre numéro de dossier de support s'affiche. Un spécialiste du support NetApp va étudier votre dossier et vous recontacterons très rapidement.
+
+Pour consulter l'historique de vos dossiers d'assistance, vous pouvez cliquer sur *Paramètres > Chronologie* et rechercher les actions nommées "Créer un dossier de support". Un bouton à l'extrême droite vous permet de développer l'action pour voir les détails.
+
+Il est possible que vous rencontriez le message d'erreur suivant lors de la création d'un dossier :
+
+« Vous n'êtes pas autorisé à créer un dossier pour le service sélectionné »
+
+Cette erreur peut signifier que le compte NSS et la société d'enregistrement auquel il est associé n'est pas la même société d'enregistrement pour le numéro de série du compte BlueXP (par exemple 960xxxx) ou le numéro de série de l'environnement de travail. Vous pouvez consulter votre liste de comptes NSS en haut du formulaire *Créer un dossier* pour trouver la correspondance appropriée, ou vous pouvez demander de l'aide en utilisant l'une des options suivantes :
+
+* Utilisez le chat du produit
+* Soumettre un dossier non technique à https://mysupport.netapp.com/site/help[]
+

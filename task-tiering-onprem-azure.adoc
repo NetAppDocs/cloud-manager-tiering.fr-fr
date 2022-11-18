@@ -36,7 +36,7 @@ Dans BlueXP, sélectionnez un environnement de travail sur site, cliquez sur *Ac
 [role="quick-margin-para"]
 Après la fin de votre essai gratuit, payez le Tiering cloud par le biais d'un abonnement avec paiement à l'utilisation, d'une licence BYOL ONTAP Cloud Tiering ou d'une combinaison des deux :
 
-* Pour vous abonner à Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Accédez à l'offre Cloud Manager Marketplace"^], Cliquez sur *s'abonner*, puis suivez les invites.
+* Pour vous abonner à Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Accédez à l'offre BlueXP Marketplace"^], Cliquez sur *s'abonner*, puis suivez les invites.
 * Pour payer avec une licence Cloud Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?Subject=Licensing[contactez-nous si vous devez en acheter un], puis link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account["Ajoutez-le à votre compte à partir du portefeuille numérique BlueXP"].
 
 

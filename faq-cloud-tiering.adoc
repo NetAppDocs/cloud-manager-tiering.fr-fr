@@ -130,7 +130,7 @@ Oui. NetApp Cloud Tiering vous permet d'utiliser une licence BYOL, un abonnement
 
 === Que se passe-t-il si la limite de capacité BYOL est atteinte ?
 
-Si vous atteignez une limite de capacité BYOL, le Tiering des nouvelles données inactives est interrompu alors que toutes les données précédemment hiérarchisées restent accessibles. Si vous avez souscrit un abonnement PAYGO au modèle _Cloud Manager - Deploy & Manage Cloud Data Services_, les nouvelles données inactives continueront à être hiérarchisées vers le stockage objet et vous payez uniquement ce supplément à l'utilisation.
+Si vous atteignez une limite de capacité BYOL, le Tiering des nouvelles données inactives est interrompu alors que toutes les données précédemment hiérarchisées restent accessibles. Si vous avez souscrit un abonnement PayGO Marketplace au _BlueXP - déployer et gérer Cloud Data Services_, les nouvelles données inactives continueront à être hiérarchisées vers le stockage objet et vous payez uniquement pour ces frais à l'utilisation.
 
 
 
@@ -204,7 +204,7 @@ Si vous disposez de systèmes Cloud Volumes ONTAP, vous les trouverez dans le ta
 
 Cela dépend de l'endroit où vous procédez au Tiering des données inactives. Pour en savoir plus, consultez les liens suivants :
 
-* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters["Tiering des données vers Amazon S3"]
+* link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster["Tiering des données vers Amazon S3"]
 * link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Tiering des données vers le stockage Azure Blob"]
 * link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters["Tiering des données vers Google Cloud Storage"]
 * link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters["Tiering des données vers StorageGRID"]

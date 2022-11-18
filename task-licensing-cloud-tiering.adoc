@@ -18,7 +18,7 @@ Une version d'essai gratuite de 30 jours de Cloud Tiering commence lorsque vous 
 
 Quelques remarques avant de lire plus loin :
 
-* Si vous vous êtes déjà abonné à Cloud Manager (PAYGO) dans votre fournisseur cloud, vous êtes également automatiquement abonné à Cloud Tiering à partir des systèmes ONTAP sur site. Un abonnement actif s'affiche dans l'onglet Cloud Tiering *Licensing*. Vous n'aurez pas besoin de vous abonner à nouveau.
+* Si vous vous êtes déjà abonné à BlueXP (PAYGO) sur le marché de votre fournisseur cloud, vous êtes également automatiquement abonné à Cloud Tiering à partir des systèmes ONTAP sur site. Un abonnement actif s'affiche dans l'onglet Cloud Tiering *Licensing*. Vous n'aurez pas besoin de vous abonner à nouveau.
 * La licence BYOL Cloud Tiering est une licence _flottante_ que vous pouvez utiliser avec plusieurs clusters ONTAP sur site de votre compte BlueXP. C'est différent de ce que vous aviez déjà acheté une licence _FabricPool_ pour chaque cluster.
 * Le Tiering des données dans StorageGRID n'est pas facturé, une licence BYOL ou un Deal Registration doit être payant. Ces données hiérarchisées ne sont pas prises en compte par rapport à la capacité achetée dans votre licence.
 

@@ -85,7 +85,7 @@ Le paiement pour le Tiering dans le cloud s'effectue via un abonnement avec paie
 
 Le Tiering des données vers StorageGRID n'est pas payant. Une licence BYOL ou un enregistrement PAYGO ne sont pas nécessaires.
 
-https://cloud.netapp.com/cloud-tiering["Voir les détails des tarifs"^].
+https://bluexp.netapp.com/pricing#tiering["Voir les détails des tarifs"^].
 
 
 

@@ -164,9 +164,9 @@ image:screenshot_tiering_cluster_info.png["Une capture d'écran présente le rap
 
 
 
-Vous pouvez également https://docs.netapp.com/us-en/active-iq/task_monitor_and_tier_inactive_data_with_FabricPool_Advisor.html["Consultez les informations de hiérarchisation pour un cluster depuis Active IQ Digital Advisor"^] Si vous connaissez déjà ce produit NetApp, Sélectionnez simplement *FabricPool Advisor* dans le volet de navigation de gauche.
+Vous pouvez également https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering["Affichez les informations de hiérarchisation pour un cluster depuis Digital Advisor"^] Si vous connaissez déjà ce produit NetApp, Il vous suffit de sélectionner *Cloud Recommendations* dans le volet de navigation de gauche.
 
-image:screenshot_tiering_aiq_fabricpool_info.png["Copie d'écran présentant les informations de FabricPool pour un cluster utilisant le conseiller FabricPool de Active IQ Digital Advisor."]
+image:screenshot_tiering_aiq_fabricpool_info.png["Copie d'écran présentant les informations de FabricPool pour un cluster utilisant le conseiller FabricPool de Digital Advisor."]
 
 
 
@@ -177,9 +177,9 @@ Les défaillances peuvent survenir. Et le cas fois, Cloud Tiering affiche l'éta
 .Étapes
 . Identifiez tous les clusters dont l'état opérationnel est « en panne ».
 +
-image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_tiering_health.gif["Capture d'écran indiquant l'état d'intégrité d'un Tiering échec pour un cluster."]
+image:screenshot_tiering_health.gif["Capture d'écran indiquant l'état d'intégrité d'un Tiering échec pour un cluster."]
 
-. Placez le pointeur de la souris sur le image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_info_icon.gif["Capture d'écran de l'icône i indiquant la raison de l'échec"] pour voir la raison de l'échec.
+. Placez le pointeur de la souris sur le image:screenshot_info_icon.gif["Capture d'écran de l'icône i indiquant la raison de l'échec"] pour voir la raison de l'échec.
 . Corriger le problème :
 +
 .. Vérifiez que le cluster ONTAP est opérationnel et qu'il dispose d'une connexion entrante et sortante avec votre fournisseur de stockage objet.

@@ -42,6 +42,7 @@ Nous accordons une grande importance à vos commentaires. Envoyez vos commentair
 
 Outre les options d'auto-support mentionnées ci-dessus, vous pouvez travailler avec un spécialiste du support NetApp pour résoudre tous les problèmes après avoir activé le service de support.
 
+.Avant de commencer
 Pour utiliser la fonction *Créer un cas*, vous devez d'abord effectuer un enregistrement unique de votre numéro de série d'ID de compte BlueXP (par exemple 960xxxx) avec NetApp. link:task-support-registration.html["Découvrez comment vous inscrire à de l'aide"].
 
 .Étapes
@@ -75,6 +76,7 @@ image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/med
 
 
 
+.Une fois que vous avez terminé
 Une fenêtre contextuelle contenant votre numéro de dossier de support s'affiche. Un spécialiste du support NetApp va étudier votre dossier et vous recontacterons très rapidement.
 
 Pour consulter l'historique de vos dossiers d'assistance, vous pouvez cliquer sur *Paramètres > Chronologie* et rechercher les actions nommées "Créer un dossier de support". Un bouton à l'extrême droite vous permet de développer l'action pour voir les détails.

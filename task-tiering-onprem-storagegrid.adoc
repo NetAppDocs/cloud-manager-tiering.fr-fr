@@ -22,15 +22,18 @@ Libérez de l'espace sur vos clusters ONTAP sur site grâce au Tiering des donn�
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Préparation au Tiering des données vers StorageGRID
 [role="quick-margin-para"]
 Il faut les éléments suivants :
 
+[role="quick-margin-list"]
 * Cluster ONTAP sur site qui exécute ONTAP 9.4 ou version ultérieure et connexion à StorageGRID via un port spécifié par l'utilisateur. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Découvrez comment détecter un cluster"^].
 * StorageGRID 10.3 ou version ultérieure avec les clés d'accès AWS qui disposent d'autorisations S3.
 * Un connecteur installé sur votre site.
 * Mise en réseau du connecteur qui permet d'établir une connexion HTTPS sortante avec le cluster ONTAP, vers StorageGRID et vers le service Cloud Tiering.
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurer le Tiering
 [role="quick-margin-para"]
 Dans BlueXP, sélectionnez un environnement de travail sur site, cliquez sur *Activer* pour le service Tiering et suivez les invites pour le Tiering des données vers StorageGRID.
 
@@ -154,7 +157,7 @@ Assurez-vous que le connecteur dispose des connexions réseau requises.
 
 Une fois votre environnement prêt, commencez le Tiering des données inactives à partir du premier cluster.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un environnement de travail sur site"^].
 * Le FQDN du nœud de passerelle StorageGRID et le port qui sera utilisé pour les communications HTTPS.
 * Clé d'accès AWS qui dispose des autorisations S3 requises.
@@ -203,8 +206,10 @@ image:screenshot_tiering_policy_settings.png["Capture d'écran affichant les par
 
 
 
+.Résultat
 Vous avez configuré le Tiering des données depuis les volumes du cluster vers StorageGRID.
 
+.Et la suite ?
 Vous pouvez vérifier les informations concernant les données actives et inactives sur le cluster. link:task-managing-tiering.html["En savoir plus sur la gestion de vos paramètres de hiérarchisation"].
 
 Vous pouvez également créer un autre stockage objet, lorsque vous souhaitez hiérarchiser les données issues de certains agrégats d'un cluster vers plusieurs magasins d'objets. Ou si vous prévoyez d'utiliser la mise en miroir FabricPool où vos données hiérarchisées sont répliquées vers un magasin d'objets supplémentaire. link:task-managing-object-storage.html["En savoir plus sur la gestion des magasins d'objets"].

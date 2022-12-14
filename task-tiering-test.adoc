@@ -20,9 +20,10 @@ Voici quelques exemples de résultats de performances :
 
 image:screenshot_cloud_performance_test.gif["Copie d'écran des résultats du cluster pour le test de performance du cloud."]
 
+.Avant de commencer
 Il est recommandé d'exécuter ce contrôle lorsque le cluster est inférieur à 50 % d'utilisation du CPU.
 
-.Les étapes pour un cluster qui a été configuré pour le Tiering hasn&#8217;t
+.Étapes d'un cluster qui n'a pas été configuré pour la hiérarchisation
 . Dans le menu de navigation de gauche, sélectionnez *mobilité > hiérarchisation*.
 . Dans *Cluster Dashboard*, cliquez sur l'icône de menu d'un cluster et sélectionnez *Cloud Performance Test*.
 . Vérifiez les détails et cliquez sur *Continuer*.

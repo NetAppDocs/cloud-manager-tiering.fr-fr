@@ -50,11 +50,12 @@ image:screenshot_tiering_policy_settings.png["Capture d'écran affichant les par
 
 
 
+.Résultat
 Les volumes sélectionnés commencent à placer leurs données dans le cloud.
 
 
 
-== Modification de la règle de hiérarchisation d'un volume
+== Modification de la règle de Tiering d'un volume
 
 La modification de la règle de Tiering pour un volume modifie la façon dont ONTAP transfère les données inactives vers le stockage objet. La modification commence dès que vous modifiez la stratégie. Elle modifie uniquement le comportement de Tiering ultérieur du volume ; les données ne sont pas déplacées rétroactivement vers le Tier cloud.
 
@@ -70,8 +71,9 @@ image:screenshot_tiering_policy_settings.png["Capture d'écran affichant les par
 
 
 
-*Remarque :* si vous voyez des options pour "récupérer les données en tiers", voir  data from the cloud tier back to the performance tier,Migration des données depuis le Tier cloud vers le Tier de performance pour plus d'informations.
+*Remarque :* si vous voyez des options pour "récupérer les données en tiers", voir <<Migration des données depuis le Tier cloud vers le Tier de performance,Migration des données depuis le Tier cloud vers le Tier de performance>> pour plus d'informations.
 
+.Résultat
 La règle de Tiering est modifiée et les données commencent à être hiérarchisées en fonction de la nouvelle règle.
 
 
@@ -97,6 +99,7 @@ Deux options sont disponibles :
 
 NOTE: Votre fournisseur cloud peut vous facturer le montant des données transférées hors du cloud.
 
+.Étapes
 Assurez-vous de disposer d'un espace suffisant dans le Tier de performance pour toutes les données déplacées depuis le cloud.
 
 . Dans le menu de navigation de gauche, sélectionnez *mobilité > hiérarchisation*.
@@ -107,6 +110,7 @@ image:screenshot_tiering_policy_settings_with_retrieve.png["Capture d'écran aff
 
 
 
+.Résultat
 La règle de Tiering est modifiée et les données hiérarchisées commencent à être retransférées vers le Tier de performance. Selon la quantité de données dans le cloud, le processus de transfert peut prendre un certain temps.
 
 
@@ -221,6 +225,7 @@ Notez que l'adresse IP de gestion du cluster est renseignée sur la base des inf
 . Sur la page _Details & Credentials_, le nom du cluster est ajouté en tant que Nom de l'environnement de travail, il vous suffit de cliquer sur *Go*.
 
 
+.Résultat
 BlueXP découvre le cluster et l'ajoute à un environnement de travail dans Canvas en utilisant le nom de cluster comme nom d'environnement de travail.
 
 Vous pouvez activer le service Tiering ou d'autres services pour ce cluster dans le volet de droite.

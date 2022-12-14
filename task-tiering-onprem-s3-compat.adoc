@@ -29,21 +29,26 @@ NetApp ne prend pas en charge les problèmes liés à tout service de magasin d'
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Préparez la préparation au Tiering des données vers un stockage objet compatible S3
 [role="quick-margin-para"]
 Il faut les éléments suivants :
 
+[role="quick-margin-list"]
 * Cluster ONTAP sur site qui exécute ONTAP 9.8 ou version ultérieure et connexion via un port spécifié par l'utilisateur vers le stockage objet compatible S3. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Découvrez comment détecter un cluster"^].
 * Le FQDN, la clé d'accès et la clé secrète du serveur de stockage objet de sorte que le cluster ONTAP puisse accéder au compartiment.
 * Un connecteur installé sur votre site.
 * Mise en réseau pour le connecteur qui permet d'établir une connexion HTTPS sortante vers le cluster ONTAP, vers le stockage objet compatible S3 et vers le service NetApp Cloud Tiering.
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurer le Tiering
 [role="quick-margin-para"]
 Dans BlueXP, sélectionnez un environnement de travail sur site, cliquez sur *Activer* pour le service Tiering, puis suivez les invites pour le Tiering des données vers un stockage objet compatible S3.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Configuration des licences
 [role="quick-margin-para"]
 Payez pour le Tiering dans le cloud via un abonnement avec paiement basé sur l'utilisation auprès de votre fournisseur cloud, une licence « NetApp Cloud Tiering », ou une combinaison des deux :
 
+[role="quick-margin-list"]
 * Pour souscrire à l'offre BlueXP PAYGO à partir du https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplace"^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure Marketplace"^], ou https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Marketplace GCP"^], Cliquez sur *Abonnez-vous* et suivez les invites.
 * Pour payer avec une licence Cloud Tiering BYOL, mailto:ng-cloud-tiering@netapp.com?Subject=Licensing[contactez-nous si vous devez en acheter un], puis link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account["Ajoutez-le à votre compte à partir du portefeuille numérique BlueXP"].
 
@@ -158,7 +163,7 @@ Assurez-vous que le connecteur dispose des connexions réseau requises.
 
 Une fois votre environnement prêt, commencez le Tiering des données inactives à partir du premier cluster.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Un environnement de travail sur site"^].
 * Le FQDN du serveur de stockage objet compatible S3 et du port qui sera utilisé pour les communications HTTPS.
 * Une clé d'accès et une clé secrète dotée des autorisations S3 requises.
@@ -202,8 +207,10 @@ image:screenshot_tiering_policy_settings.png["Capture d'écran affichant les par
 
 
 
+.Résultat
 Vous avez configuré le Tiering des données à partir de volumes du cluster vers un stockage objet compatible S3.
 
+.Et la suite ?
 link:task-licensing-cloud-tiering.html["N'oubliez pas de vous abonner au service NetApp Cloud Tiering"].
 
 Vous pouvez vérifier les informations concernant les données actives et inactives sur le cluster. link:task-managing-tiering.html["En savoir plus sur la gestion de vos paramètres de hiérarchisation"].

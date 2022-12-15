@@ -894,17 +894,13 @@
   <block id="952ecf98141368e99f3a215ef7b80187" category="paragraph">Cloud Tiering utilise le Tier d'accès/classe de stockage par défaut du fournisseur cloud pour vos données inactives. Toutefois, vous pouvez appliquer une règle de cycle de vie afin que les données passent automatiquement de la classe de stockage par défaut à une autre classe de stockage après un certain nombre de jours. Cela permet de réduire vos coûts en déplaçant les données très inactives vers un stockage moins onéreux.</block>
   <block id="54a34d1053931389233aa9b6c8fc588b" category="admonition">Vous ne pouvez pas sélectionner de règles de cycle de vie pour les données placées dans un Tier de stockage vers StorageGRID ou compatible S3.</block>
   <block id="8c3c2e38ab977ab43a9ebd00e29973df" category="section-title">Prix et licences</block>
-  <block id="6341d59e78dc892e44e4255d34dff624" category="paragraph">Le paiement pour le Tiering dans le cloud s'effectue via un abonnement avec paiement basé sur l'utilisation, un abonnement annuel, une licence Cloud Tiering « Bring your own license », ou une combinaison de ces solutions. Un essai gratuit de 30 jours est disponible pour votre premier cluster si vous n'avez pas de licence.</block>
   <block id="591a2cff7f748b04420333fcacaf56fd" category="paragraph">Le Tiering des données vers StorageGRID n'est pas payant. Une licence BYOL ou un enregistrement PAYGO ne sont pas nécessaires.</block>
   <block id="8f66314cc87864910e23571f159f6180" category="inline-link">Voir les détails des tarifs</block>
   <block id="5ef05167488611c5bd4ff0f410595ce4" category="section-title">essai gratuit de 30 jours</block>
   <block id="85e6332aa0d0ad8f46ae520da6d1c0c7" category="paragraph">Si vous ne disposez pas de licence Cloud Tiering, une version d'évaluation gratuite de 30 jours de Cloud Tiering commence lorsque vous configurez le Tiering sur le premier cluster. Après la fin de l'essai gratuit de 30 jours, vous devrez payer le service Cloud Tiering par le biais d'un abonnement avec paiement à l'utilisation, d'un abonnement annuel, d'une licence BYOL ou d'une combinaison des deux.</block>
   <block id="66415c946116518cc6899512da0314ea" category="paragraph">Si votre version d'évaluation gratuite est terminée et que vous n'avez pas souscrit à cette licence, ONTAP ne transfère plus les données inactives vers un stockage objet, mais les données existantes sont toujours accessibles.</block>
   <block id="d1517db071086971f3453ded8278c7a1" category="section-title">Abonnement avec paiement à l'utilisation</block>
-  <block id="574f68397c4fbd685f9ffd6c26ebedfc" category="paragraph">Cloud Tiering propose un modèle de paiement à l'utilisation avec des licences basées sur la consommation. Après vous être abonné sur le marché de votre fournisseur cloud, vous payez par Go pour les données hiérarchisées - pas de paiement initial. Votre fournisseur cloud vous facturé mensuellement.</block>
   <block id="a287e316989c25a2ee988a3e9950bf89" category="paragraph">Vous devez vous abonner même si vous disposez d'une période d'essai gratuite ou si vous apportez votre propre licence (BYOL) :</block>
-  <block id="54a99e6398e2bfa4f64af1dd12d262b1" category="list-text">L'abonnement garantit l'absence de perturbation du service après la fin de votre essai gratuit.</block>
-  <block id="2313cad7315c23de47d9a68ab747e3f4" category="paragraph">À la fin de l'essai, vous serez facturé toutes les heures en fonction de la quantité de données que vous avez réparties par niveau.</block>
   <block id="7b8b7c4201f97e18e28054d96ce898a0" category="list-text">Si vous procédez au Tiering des données plus élevé que ce qui est autorisé par votre licence BYOL, le Tiering des données se poursuit avec votre abonnement au paiement basé sur l'utilisation.</block>
   <block id="3f08769be064240fa25ba129ac43d9a4" category="paragraph">Par exemple, si vous disposez d'une licence de 10 To, toute la capacité au-delà de 10 To est facturée par l'abonnement au paiement basé sur l'utilisation.</block>
   <block id="ad05b2f231e5f48f63b30a2913fa7fef" category="paragraph">Vous ne serez pas facturé à partir de votre abonnement au paiement à l'utilisation pendant votre essai gratuit ou si vous n'avez pas dépassé la licence BYOL Cloud Tiering.</block>
@@ -1175,13 +1171,6 @@
   <block id="d3028cb26dae3dbde1ec068c17d15383" category="paragraph">Lors de la configuration de Cloud Tiering, vous pouvez maintenant configurer une règle de cycle de vie de sorte que vos données inactives puissent passer de la classe de stockage _Standard_ à la classe de récupération instantanée _Glacier_ après un certain nombre de jours. Vous réduisez ainsi les coûts de votre infrastructure AWS.<block ref="99f36cc81f33df65a0349e719000fada" category="inline-link-rx"></block></block>
   <block id="199090bb5d58df554b18a5cb68acb0b7" category="section-title">NetApp Cloud Tiering est totalement qualifié sur les systèmes ONTAP Select</block>
   <block id="a74220a8acc78d1041352afb305af18f" category="paragraph">Outre le Tiering des données depuis vos systèmes AFF et FAS, vous pouvez désormais déplacer les données inactives à partir de vos systèmes ONTAP Select vers un stockage dans le cloud.</block>
-  <block id="d798cbf5a08fbeb9fdd3652e5b00bb4c" category="section-title">2 septembre 2021</block>
-  <block id="99c3c55ceb085b94e53d8b7984863037" category="section-title">La licence BYOL Cloud Tiering remplace la licence FabricPool</block>
-  <block id="54b8200ba1ce85a7ad931e091de0ed98" category="inline-link">En savoir plus sur la nouvelle licence Cloud Tiering</block>
-  <block id="34a4923a0f84a1bc223389cfed6e2b62" category="paragraph"><block ref="3054f156a0693c67de0611c0445f676e" category="inline-link-rx"></block>.</block>
-  <block id="24263383a842093a8c2b6b9b8a88989d" category="section-title">Déplacez les données inactives à partir de clusters ONTAP sur site vers un stockage objet compatible S3</block>
-  <block id="59e10c49329cd1a0a55e4a0d27f6a584" category="inline-link">Découvrez comment transférer des données vers des systèmes de stockage objet compatibles S3</block>
-  <block id="df94b79ab63138be1c03382ae20c338d" category="paragraph">Vous pouvez désormais transférer des données inactives vers un service de stockage objet qui utilise le protocole simple Storage Service (S3).<block ref="26932bf166134e05b1ade0d7ecb1b6d8" category="inline-link-rx"></block>.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Mentions légales</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Les mentions légales donnent accès aux déclarations de copyright, aux marques, aux brevets, etc.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Droits d'auteur</block>
@@ -1309,7 +1298,6 @@
   <block id="a4106436d00150633e4b615291f0b5c4" category="list-text">Pour vous abonner à GCP Marketplace,<block ref="7e960c467ff9bbcd90615ea936733251" category="inline-link-rx"></block>, Cliquez sur *s'abonner*, puis suivez les invites.</block>
   <block id="bd25c3527b85ace964c6837242630a19" category="paragraph"><block ref="316080080631334cc8b0ad0316a8ebff" category="inline-link-rx"></block>.</block>
   <block id="be161e727970da45fa68901ea907f28e" category="list-text">Pour vous abonner à AWS Marketplace,<block ref="39d4482f47ca47b562b106b1d8bbeae0" category="inline-link-rx"></block>, Cliquez sur *s'abonner*, puis suivez les invites.</block>
-  <block id="6cca8ac33a42313a50c7ad5adc9f4c91" category="paragraph">Une nouvelle licence *Cloud Tiering* est désormais disponible pour les configurations de Tiering prises en charge dans BlueXP à l'aide du service Cloud Tiering. Il s'agit d'une licence flottante qui peut être utilisée avec plusieurs clusters ONTAP sur site. La licence *FabricPool* que vous avez peut-être utilisée dans le passé n'est conservée que pour les configurations qui ne sont pas prises en charge dans BlueXP.</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="paragraph-title">Avant de commencer</block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">Une fois que vous avez terminé</block>
   <block id="f2575f6d19024f7288cf78d7dc5b3db9" category="paragraph">Le tableau de bord du support vous permet d'ajouter et de gérer vos comptes du site de support NetApp pour BlueXP.</block>
@@ -1340,4 +1328,18 @@
   <block id="874a5fea50f0ef6118e6407f7a38543b" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Préparation au Tiering des données vers StorageGRID</block>
   <block id="80fd0114f074882cbd99907336bcbff9" category="list-title">Étapes d'un cluster qui n'a pas été configuré pour la hiérarchisation</block>
   <block id="afef51d18777eb361a20c2043d35b3c7" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Préparez le Tiering des données vers le stockage Azure Blob</block>
+  <block id="5209115a888f027224c846c628056309" category="paragraph">Le paiement pour le Tiering dans le cloud s'effectue via un abonnement avec paiement basé sur l'utilisation, un abonnement annuel, une licence Cloud Tiering « Bring your own license », ou une combinaison de ces solutions. Si vous ne disposez pas de licence, vous pouvez bénéficier d'un essai gratuit de 30 jours pour votre premier cluster.</block>
+  <block id="33b59bfb403a0733ef596d22b762d049" category="paragraph">Cloud Tiering propose un modèle de paiement à l'utilisation avec des licences basées sur la consommation. Après vous être abonné sur le marché de votre fournisseur cloud, vous payez par Go pour les données hiérarchisées - pas de paiement initial. Votre fournisseur cloud vous facturé mensuellement.</block>
+  <block id="b5aec059d3f0c191720983ba1eb05690" category="list-text">L'abonnement garantit l'absence de perturbation du service après la fin de votre essai gratuit.</block>
+  <block id="121bc0fb41d07ce979966173203acae0" category="paragraph">À la fin de l'essai, vous serez facturé toutes les heures en fonction du volume de données que vous procédez au Tiering.</block>
+  <block id="5c0fff562b33dc0a5a3acac30ed2d313" category="section-title">6 décembre 2022</block>
+  <block id="73358bf2a9d2d2c32dbbab5b76681d7f" category="section-title">Modifications du point de terminaison d'accès Internet sortant du connecteur requises</block>
+  <block id="c433416a8f427b90caab6f6eed1f6323" category="paragraph">Du fait d'un changement dans le Tiering cloud, il est nécessaire de modifier les terminaux de connecteur suivants pour assurer la réussite des opérations de Tiering dans le cloud :</block>
+  <block id="eb75f7332becd8b3fbb2a59ea0bd0536" category="cell">Ancien terminal</block>
+  <block id="afcce2fe2d959c0f4554e7815a50e8e4" category="cell">Nouveau terminal</block>
+  <block id="115781a0043a85f8707c5c99fd02dc75" category="cell">\https://cloudmanager.cloud.netapp.com</block>
+  <block id="e1095ff19466581c5274f67123c95036" category="cell">\https://api.bluexp.netapp.com</block>
+  <block id="9e434ddc2ad4b9de005368b77254223d" category="cell">\https://*.cloudmanager.cloud.netapp.com</block>
+  <block id="37ba276f010f4ea07f1196b487811443" category="cell">\https://*.api.bluexp.netapp.com</block>
+  <block id="0e40b9cba041560c9517bc49757da3c7" category="paragraph">Consultez la liste complète des terminaux de votre<block ref="4c9e3e17ba20f553394e5bc78e402946" category="inline-link-rx"></block>,<block ref="cd3c6f623ccf3e34f9d46b28c47f2a3d" category="inline-link-rx"></block>, ou<block ref="80755100f97c37f8aa8e3d999b0a43d9" category="inline-link-rx"></block> de cloud hybride.</block>
 </blocks>

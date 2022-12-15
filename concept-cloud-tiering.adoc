@@ -81,7 +81,7 @@ NOTE: Vous ne pouvez pas sélectionner de règles de cycle de vie pour les donn�
 
 == Prix et licences
 
-Le paiement pour le Tiering dans le cloud s'effectue via un abonnement avec paiement basé sur l'utilisation, un abonnement annuel, une licence Cloud Tiering « Bring your own license », ou une combinaison de ces solutions. Un essai gratuit de 30 jours est disponible pour votre premier cluster si vous n'avez pas de licence.
+Le paiement pour le Tiering dans le cloud s'effectue via un abonnement avec paiement basé sur l'utilisation, un abonnement annuel, une licence Cloud Tiering « Bring your own license », ou une combinaison de ces solutions. Si vous ne disposez pas de licence, vous pouvez bénéficier d'un essai gratuit de 30 jours pour votre premier cluster.
 
 Le Tiering des données vers StorageGRID n'est pas payant. Une licence BYOL ou un enregistrement PAYGO ne sont pas nécessaires.
 
@@ -105,7 +105,7 @@ Vous devez vous abonner même si vous disposez d'une période d'essai gratuite o
 
 * L'abonnement garantit l'absence de perturbation du service après la fin de votre essai gratuit.
 +
-À la fin de l'essai, vous serez facturé toutes les heures en fonction de la quantité de données que vous avez réparties par niveau.
+À la fin de l'essai, vous serez facturé toutes les heures en fonction du volume de données que vous procédez au Tiering.
 
 * Si vous procédez au Tiering des données plus élevé que ce qui est autorisé par votre licence BYOL, le Tiering des données se poursuit avec votre abonnement au paiement basé sur l'utilisation.
 +

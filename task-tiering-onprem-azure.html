@@ -803,7 +803,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-18 21:12:10 +0000">11/18/2022</time>
+    <time datetime="2022-12-15 14:59:35 +0000">12/15/2022</time>
     
   
 
@@ -827,9 +827,10 @@
 <p>Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu&#8217;aux sections restantes pour obtenir de plus amples informations.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Une seule"></span> Préparez le Tiering des données vers le stockage Azure Blob</div>
 <p>Il faut les éléments suivants :</p>
 </div>
-<div class="ulist">
+<div class="ulist quick-margin-list">
 <ul>
 <li>
 <p>Cluster ONTAP sur site qui exécute ONTAP 9.4 ou version ultérieure et qui est doté d&#8217;une connexion HTTPS vers le stockage Azure Blob. <a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Découvrez comment détecter un cluster"</a>.</p>
@@ -843,12 +844,14 @@
 </ul>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Deux"></span> Configurer le Tiering</div>
 <p>Dans BlueXP, sélectionnez un environnement de travail sur site, cliquez sur <strong>Activer</strong> pour le service Tiering et suivez les invites pour le Tiering des données vers le stockage Azure Blob.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Trois"></span> Configuration des licences</div>
 <p>Après la fin de votre essai gratuit, payez le Tiering cloud par le biais d&#8217;un abonnement avec paiement à l&#8217;utilisation, d&#8217;une licence BYOL ONTAP Cloud Tiering ou d&#8217;une combinaison des deux :</p>
 </div>
-<div class="ulist">
+<div class="ulist quick-margin-list">
 <ul>
 <li>
 <p>Pour vous abonner à Azure Marketplace, <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview" target="_blank" rel="noopener">"Accédez à l&#8217;offre BlueXP Marketplace"</a>, Cliquez sur <strong>s&#8217;abonner</strong>, puis suivez les invites.</p>
@@ -1079,6 +1082,7 @@ Si vous prévoyez de configurer NetApp Cloud Tiering pour utiliser un Tier d&#82
 <p>Une fois votre environnement Azure prêt, commencez le Tiering des données inactives à partir du premier cluster.</p>
 </div>
 <div class="paragraph">
+<div class="title">Ce dont vous avez besoin</div>
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Un environnement de travail sur site"</a>.</p>
 </div>
 <div class="olist arabic">
@@ -1132,12 +1136,14 @@ Si vous prévoyez de configurer NetApp Cloud Tiering pour utiliser un Tier d&#82
 <div class="paragraph">
 <p>Notez que la règle du cycle de vie est appliquée à tous les conteneurs d&#8217;objets blob du compte de stockage sélectionné.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>that you have the necessary Connector permissions,Vérifiez que vous disposez des autorisations de connecteur nécessaires pour la fonction de gestion du cycle de vie.</pre>
-</div>
-</div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="#vérifiez-que-vous-disposez-des-autorisations-de-connecteur-nécessaires">Vérifiez que vous disposez des autorisations de connecteur nécessaires</a> pour la fonction de gestion du cycle de vie.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p><strong>Cluster Network</strong> : sélectionnez l&#8217;IPspace ONTAP à utiliser pour se connecter au stockage objet, puis cliquez sur <strong>Continuer</strong>.</p>
 <div class="paragraph">
@@ -1178,9 +1184,11 @@ Si vous prévoyez de configurer NetApp Cloud Tiering pour utiliser un Tier d&#82
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>Vous avez configuré le Tiering des données depuis les volumes du cluster vers le stockage objet Azure Blob.</p>
 </div>
 <div class="paragraph">
+<div class="title">Et la suite ?</div>
 <p><a href="task-licensing-cloud-tiering.html">"N&#8217;oubliez pas de vous abonner au service NetApp Cloud Tiering"</a>.</p>
 </div>
 <div class="paragraph">

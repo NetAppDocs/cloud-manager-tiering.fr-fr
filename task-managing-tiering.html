@@ -803,7 +803,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-18 21:12:10 +0000">11/18/2022</time>
+    <time datetime="2022-12-15 14:59:35 +0000">12/15/2022</time>
     
   
 
@@ -881,12 +881,13 @@ Il n&#8217;est pas nécessaire de configurer le stockage objet, car il était d�
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>Les volumes sélectionnés commencent à placer leurs données dans le cloud.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="modification-de-la-règle-de-hiérarchisation-dun-volume">Modification de la règle de hiérarchisation d&#8217;un volume</h2>
+<h2 id="modification-de-la-règle-de-tiering-dun-volume">Modification de la règle de Tiering d&#8217;un volume</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>La modification de la règle de Tiering pour un volume modifie la façon dont ONTAP transfère les données inactives vers le stockage objet. La modification commence dès que vous modifiez la stratégie. Elle modifie uniquement le comportement de Tiering ultérieur du volume ; les données ne sont pas déplacées rétroactivement vers le Tier cloud.</p>
@@ -912,9 +913,10 @@ Il n&#8217;est pas nécessaire de configurer le stockage objet, car il était d�
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Remarque :</strong> si vous voyez des options pour "récupérer les données en tiers", voir  data from the cloud tier back to the performance tier,Migration des données depuis le Tier cloud vers le Tier de performance pour plus d&#8217;informations.</p>
+<p><strong>Remarque :</strong> si vous voyez des options pour "récupérer les données en tiers", voir <a href="#migration-des-données-depuis-le-tier-cloud-vers-le-tier-de-performance">Migration des données depuis le Tier cloud vers le Tier de performance</a> pour plus d&#8217;informations.</p>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>La règle de Tiering est modifiée et les données commencent à être hiérarchisées en fonction de la nouvelle règle.</p>
 </div>
 </div>
@@ -970,6 +972,7 @@ Votre fournisseur cloud peut vous facturer le montant des données transférées
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Étapes</div>
 <p>Assurez-vous de disposer d&#8217;un espace suffisant dans le Tier de performance pour toutes les données déplacées depuis le cloud.</p>
 </div>
 <div class="olist arabic">
@@ -989,6 +992,7 @@ Votre fournisseur cloud peut vous facturer le montant des données transférées
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>La règle de Tiering est modifiée et les données hiérarchisées commencent à être retransférées vers le Tier de performance. Selon la quantité de données dans le cloud, le processus de transfert peut prendre un certain temps.</p>
 </div>
 </div>
@@ -1182,6 +1186,7 @@ Il est préférable de maintenir l&#8217;option IDR activée car elle permet d&#
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>BlueXP découvre le cluster et l&#8217;ajoute à un environnement de travail dans Canvas en utilisant le nom de cluster comme nom d&#8217;environnement de travail.</p>
 </div>
 <div class="paragraph">

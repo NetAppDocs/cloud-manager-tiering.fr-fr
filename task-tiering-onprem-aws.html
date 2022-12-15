@@ -803,7 +803,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-18 21:12:10 +0000">11/18/2022</time>
+    <time datetime="2022-12-15 14:59:35 +0000">12/15/2022</time>
     
   
 
@@ -827,49 +827,45 @@
 <p>Suivez ces étapes pour démarrer rapidement. Les sections suivantes de cette rubrique contiennent des informations détaillées sur chaque étape.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Une seule"></span> Identifier la méthode de configuration que vous utiliserez</div>
 <p>Indiquez si vous connecterez votre cluster ONTAP sur site directement à AWS S3 via Internet public, ou si vous utiliserez un VPN ou AWS Direct Connect et acheminez le trafic via une interface de terminal VPC privée vers AWS S3.</p>
 </div>
-<div class="literalblock quick-margin-para">
-<div class="content">
-<pre>diagrams for connection options,Voir les méthodes de connexion disponibles.</pre>
-</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#schémas-réseau-pour-les-options-de-connexion">Voir les méthodes de connexion disponibles.</a></p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Deux"></span> Préparez votre connecteur BlueXP</div>
 <p>Si votre connecteur est déjà déployé dans votre VPC AWS ou sur votre site, cela vous permettra d&#8217;être configuré. Si ce n&#8217;est pas le cas, vous devez créer un connecteur pour transférer les données ONTAP vers une solution de stockage AWS S3. Vous devez également personnaliser les paramètres réseau du connecteur pour qu&#8217;il puisse se connecter à AWS S3.</p>
 </div>
-<div class="literalblock quick-margin-para">
-<div class="content">
-<pre>your Connector,Découvrez comment créer un connecteur et comment définir les paramètres réseau requis.</pre>
-</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#préparez-votre-connecteur">Découvrez comment créer un connecteur et comment définir les paramètres réseau requis.</a></p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Trois"></span> Préparez votre cluster ONTAP sur site</div>
 <p>Découvrez votre cluster ONTAP dans BlueXP, vérifiez que le cluster répond à ses exigences minimales et personnalisez les paramètres réseau pour que le cluster puisse se connecter à AWS S3.</p>
 </div>
-<div class="literalblock quick-margin-para">
-<div class="content">
-<pre>your ONTAP cluster,Découvrez comment préparer votre cluster ONTAP sur site.</pre>
-</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#préparez-votre-cluster-ontap">Découvrez comment préparer votre cluster ONTAP sur site.</a></p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quatre"></span> Préparez Amazon S3 en tant que cible de Tiering</div>
 <p>Configurez les autorisations pour le connecteur afin de créer et de gérer le compartiment S3. Vous devez également configurer des autorisations pour le cluster ONTAP sur site afin qu&#8217;il puisse lire et écrire les données dans le compartiment S3.</p>
 </div>
-<div class="literalblock quick-margin-para">
-<div class="content">
-<pre>up S3 permissions,Découvrez comment configurer des autorisations pour le connecteur et pour votre cluster sur site.</pre>
-</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#configurez-les-autorisations-s3">Découvrez comment configurer des autorisations pour le connecteur et pour votre cluster sur site.</a></p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Cinq"></span> Activation du Tiering cloud sur le système</div>
 <p>Sélectionnez un environnement de travail sur site, cliquez sur <strong>Activer</strong> pour le service Tiering, puis suivez les invites pour hiérarchiser les données vers Amazon S3.</p>
 </div>
-<div class="literalblock quick-margin-para">
-<div class="content">
-<pre>inactive data from your first cluster to Amazon S3,Découvrez comment activer le Tiering pour vos volumes.</pre>
-</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#déplacez-les-données-inactives-de-votre-premier-cluster-vers-amazon-s3">Découvrez comment activer le Tiering pour vos volumes.</a></p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png" alt="Six"></span> Configuration des licences</div>
 <p>Après la fin de votre essai gratuit, payez le Tiering cloud par le biais d&#8217;un abonnement avec paiement à l&#8217;utilisation, d&#8217;une licence BYOL ONTAP Cloud Tiering ou d&#8217;une combinaison des deux :</p>
 </div>
-<div class="ulist">
+<div class="ulist quick-margin-list">
 <ul>
 <li>
 <p>Pour vous abonner à AWS Marketplace, <a href="https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&amp;ref_=beagle&amp;applicationId=AWSMPContessa" target="_blank" rel="noopener">"Accédez à l&#8217;offre BlueXP Marketplace"</a>, Cliquez sur <strong>s&#8217;abonner</strong>, puis suivez les invites.</p>
@@ -975,7 +971,7 @@ La communication entre un connecteur et S3 est destinée uniquement à la config
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html#cloud-tiering" target="_blank" rel="noopener">"Assurez-vous que le connecteur dispose des autorisations nécessaires pour gérer le compartiment S3"</a></p>
 </li>
 <li>
-<p>Si vous disposez d&#8217;une connexion Direct Connect ou VPN entre votre cluster ONTAP et le VPC, et que vous souhaitez que la communication entre le connecteur et S3 reste dans votre réseau interne AWS (une connexion <strong>privée</strong>), vous devez activer une interface de terminal VPC vers S3.  your system for a private connection using a VPC endpoint interface,Découvrez comment configurer une interface de terminal VPC.</p>
+<p>Si vous disposez d&#8217;une connexion Direct Connect ou VPN entre votre cluster ONTAP et le VPC, et que vous souhaitez que la communication entre le connecteur et S3 reste dans votre réseau interne AWS (une connexion <strong>privée</strong>), vous devez activer une interface de terminal VPC vers S3. <a href="Configurez votre système pour une connexion privée à l&.html#8217;aide d&#8217;une interface de terminal VPC">Découvrez comment configurer une interface de terminal VPC.</a></p>
 </li>
 </ul>
 </div>
@@ -1082,10 +1078,10 @@ NetApp Cloud Tiering prend en charge les volumes FlexGroup à partir de ONTAP 9.
 </div>
 </li>
 <li>
-<p>Si vous utilisez un terminal VPC privé dans AWS pour la connexion S3, vous devez charger le certificat de terminal S3 dans le cluster ONTAP pour pouvoir utiliser HTTPS/443.  your system for a private connection using a VPC endpoint interface,Découvrez comment configurer une interface de terminal VPC et charger le certificat S3.</p>
+<p>Si vous utilisez un terminal VPC privé dans AWS pour la connexion S3, vous devez charger le certificat de terminal S3 dans le cluster ONTAP pour pouvoir utiliser HTTPS/443. <a href="Configurez votre système pour une connexion privée à l&.html#8217;aide d&#8217;une interface de terminal VPC">Découvrez comment configurer une interface de terminal VPC et charger le certificat S3.</a></p>
 </li>
 <li>
-<p>up S3 permissions,Assurez-vous que votre cluster ONTAP possède des autorisations d&#8217;accès au compartiment S3.</p>
+<p><a href="#configurez-les-autorisations-s3">Assurez-vous que votre cluster ONTAP possède des autorisations d&#8217;accès au compartiment S3.</a></p>
 </li>
 </ul>
 </div>
@@ -1174,10 +1170,10 @@ Si vous prévoyez de configurer NetApp Cloud Tiering pour utiliser une classe de
 <div class="sect2">
 <h3 id="configurez-votre-système-pour-une-connexion-privée-à-laide-dune-interface-de-terminal-vpc">Configurez votre système pour une connexion privée à l&#8217;aide d&#8217;une interface de terminal VPC</h3>
 <div class="paragraph">
-<p>Si vous prévoyez d&#8217;utiliser une connexion Internet publique standard, toutes les autorisations sont définies par le connecteur et rien d&#8217;autre n&#8217;est nécessaire. Ce type de connexion est indiqué dans le  diagrams for connection options,premier diagramme ci-dessus.</p>
+<p>Si vous prévoyez d&#8217;utiliser une connexion Internet publique standard, toutes les autorisations sont définies par le connecteur et rien d&#8217;autre n&#8217;est nécessaire. Ce type de connexion est indiqué dans le <a href="#schémas-réseau-pour-les-options-de-connexion">premier diagramme ci-dessus</a>.</p>
 </div>
 <div class="paragraph">
-<p>Si vous voulez établir une connexion plus sécurisée via Internet entre votre data Center sur site et le VPC, vous pouvez choisir une connexion AWS PrivateLink dans l&#8217;assistant d&#8217;activation de Tiering. Elle est indispensable pour connecter votre système sur site à l&#8217;aide d&#8217;un VPN ou d&#8217;AWS Direct Connect via une interface de terminal VPC qui utilise une adresse IP privée. Ce type de connexion est indiqué dans le  diagrams for connection options,deuxième diagramme ci-dessus.</p>
+<p>Si vous voulez établir une connexion plus sécurisée via Internet entre votre data Center sur site et le VPC, vous pouvez choisir une connexion AWS PrivateLink dans l&#8217;assistant d&#8217;activation de Tiering. Elle est indispensable pour connecter votre système sur site à l&#8217;aide d&#8217;un VPN ou d&#8217;AWS Direct Connect via une interface de terminal VPC qui utilise une adresse IP privée. Ce type de connexion est indiqué dans le <a href="#schémas-réseau-pour-les-options-de-connexion">deuxième diagramme ci-dessus</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1185,7 +1181,7 @@ Si vous prévoyez de configurer NetApp Cloud Tiering pour utiliser une classe de
 <p>Créez une configuration de point final de l&#8217;interface à l&#8217;aide de la console Amazon VPC ou de la ligne de commande. <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html" target="_blank" rel="noopener">"Pour plus d&#8217;informations sur l&#8217;utilisation d&#8217;AWS PrivateLink pour Amazon S3, reportez-vous à la section"</a>.</p>
 </li>
 <li>
-<p>Modifiez la configuration du groupe de sécurité associée au connecteur BlueXP. Vous devez modifier la règle en « personnalisé » (à partir de « accès complet ») et vous devez  up S3 permissions,Ajoutez les autorisations de connecteur S3 requises comme indiqué précédemment.</p>
+<p>Modifiez la configuration du groupe de sécurité associée au connecteur BlueXP. Vous devez modifier la règle en « personnalisé » (à partir de « accès complet ») et vous devez <a href="#configurez-les-autorisations-s3">Ajoutez les autorisations de connecteur S3 requises</a> comme indiqué précédemment.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_tiering_aws_sec_group.png" alt="Copie d&#8217;écran du groupe de sécurité AWS associé au connecteur."></span></p>
 </div>
@@ -1247,7 +1243,7 @@ Please enter Certificate: Press &lt;Enter&gt; when done</code></pre>
 <p>Une fois votre environnement AWS prêt, commencez le Tiering des données inactives à partir du premier cluster.</p>
 </div>
 <div class="ulist">
-<div class="title">Ce dont vous avez besoin, 8217;ll</div>
+<div class="title">Ce dont vous avez besoin</div>
 <ul>
 <li>
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Un environnement de travail sur site"</a>.</p>
@@ -1321,7 +1317,7 @@ Please enter Certificate: Press &lt;Enter&gt; when done</code></pre>
 <p>Sélectionnez l&#8217;IPspace dans le cluster ONTAP où les volumes doivent résider. Les LIF intercluster de cet IPspace doivent disposer d&#8217;un accès Internet sortant afin que les utilisateurs puissent se connecter au stockage objet de votre fournisseur cloud.</p>
 </div>
 <div class="paragraph">
-<p>Vous pouvez également choisir d&#8217;utiliser AWS PrivateLink que vous avez configuré précédemment.  your system for a private connection using a VPC endpoint interface,Voir les informations de configuration ci-dessus.</p>
+<p>Vous pouvez également choisir d&#8217;utiliser AWS PrivateLink que vous avez configuré précédemment. <a href="Configurez votre système pour une connexion privée à l&.html#8217;aide d&#8217;une interface de terminal VPC">Voir les informations de configuration ci-dessus.</a></p>
 </div>
 </li>
 </ol>
@@ -1361,9 +1357,11 @@ Please enter Certificate: Press &lt;Enter&gt; when done</code></pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>Vous avez configuré le Tiering des données à partir des volumes du cluster vers le stockage objet S3.</p>
 </div>
 <div class="paragraph">
+<div class="title">Et la suite ?</div>
 <p><a href="task-licensing-cloud-tiering.html">"N&#8217;oubliez pas de vous abonner au service NetApp Cloud Tiering"</a>.</p>
 </div>
 <div class="paragraph">

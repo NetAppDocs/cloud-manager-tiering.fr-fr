@@ -20,7 +20,7 @@ Libérez de l'espace sur vos clusters ONTAP sur site en transférant les donnée
 ====
 Les clients qui souhaitent utiliser des magasins d'objets qui ne sont pas officiellement pris en charge comme Tier cloud peuvent le faire avec ces instructions. Les clients doivent tester et vérifier que le magasin d'objets répond à leurs exigences.
 
-NetApp ne prend pas en charge les problèmes liés à tout service de magasin d'objets tiers, notamment s'il n'a pas conclu d'accord de support avec le tiers avec lequel le produit a été créé. NetApp doit être tenu responsable de tout dommage associé ou de toute autre obligation de support pour ce produit tiers.
+NetApp ne prend pas en charge, ni ne peut être tenu responsable, de tout problème découlant de tout service de magasin d'objets tiers, en particulier s'il n'a pas convenu d'accords de support avec le tiers avec lequel le produit a été créé. NetApp doit être tenu responsable de tout dommage associé ou de toute autre obligation de support pour ce produit tiers.
 
 ====
 
@@ -34,10 +34,10 @@ Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux secti
 Il faut les éléments suivants :
 
 [role="quick-margin-list"]
-* Cluster ONTAP sur site qui exécute ONTAP 9.8 ou version ultérieure et connexion via un port spécifié par l'utilisateur vers le stockage objet compatible S3. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Découvrez comment détecter un cluster"^].
+* Cluster ONTAP source sur site qui exécute ONTAP 9.8 ou version ultérieure et connexion via un port spécifié par l'utilisateur vers le stockage objet compatible S3 de destination. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Découvrez comment détecter un cluster"^].
 * Le FQDN, la clé d'accès et la clé secrète du serveur de stockage objet de sorte que le cluster ONTAP puisse accéder au compartiment.
 * Un connecteur installé sur votre site.
-* Mise en réseau pour le connecteur qui permet d'établir une connexion HTTPS sortante vers le cluster ONTAP, vers le stockage objet compatible S3 et vers le service NetApp Cloud Tiering.
+* Mise en réseau pour le connecteur qui permet d'établir une connexion HTTPS sortante avec le cluster ONTAP source, vers le stockage objet compatible S3 et vers le service NetApp Cloud Tiering.
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Configurer le Tiering
@@ -70,7 +70,7 @@ NOTE: La communication entre le connecteur et le serveur de stockage objet compa
 
 === Préparation des clusters ONTAP
 
-Lors du Tiering des données vers une solution de stockage objet compatible S3, vos clusters ONTAP doivent répondre aux exigences suivantes.
+Lors du Tiering des données vers un stockage objet compatible S3, vos clusters ONTAP source doivent répondre aux exigences suivantes.
 
 Plateformes ONTAP prises en charge:: Vous pouvez procéder au Tiering des données depuis les systèmes AFF ou FAS avec des agrégats 100 % SSD ou des agrégats 100 % disques durs.
 Version ONTAP prise en charge:: ONTAP 9.8 ou version ultérieure
@@ -80,7 +80,7 @@ Configuration requise pour la mise en réseau des clusters::
 --
 * Le cluster ONTAP établit une connexion HTTPS via un port spécifié par l'utilisateur pour un stockage objet compatible S3 (le port est configurable lors de la configuration du Tiering).
 +
-Le ONTAP lit et écrit les données vers et à partir du stockage objet. Le stockage objet ne démarre jamais, il répond simplement.
+Le système ONTAP source lit et écrit les données vers et à partir du stockage objet. Le stockage objet ne démarre jamais, il répond simplement.
 
 * Une connexion entrante est requise à partir du connecteur, qui doit résider dans vos locaux.
 +

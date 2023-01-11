@@ -52,8 +52,8 @@ Vous pouvez effectuer le Tiering des données inactives à partir d'un système 
 * Amazon S3
 * Microsoft Azure Blob
 * Google Cloud Storage
-* Stockage objet compatible S3
 * NetApp StorageGRID
+* Stockage objet compatible S3
 
 
 Il est également possible de partager les licences Cloud Tiering avec vos clusters qui transfèrent les données vers une solution IBM Cloud Object Storage. La configuration FabricPool doit être définie au moyen de System Manager ou de l'interface de ligne de commandes ONTAP, mais https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations["La licence pour ce type de configuration est terminée avec Cloud Tiering."]

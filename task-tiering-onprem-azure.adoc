@@ -190,10 +190,10 @@ image:screenshot_setup_tiering_onprem.png["Une capture d'écran montre l'option 
 . Suivez les étapes des pages *Créer un stockage objet* :
 +
 .. *Groupe de ressources* : sélectionnez un groupe de ressources dans lequel un conteneur existant est géré, ou dans lequel vous souhaitez créer un nouveau conteneur pour les données hiérarchisées, puis cliquez sur *Continuer*.
-.. *Conteneur Azure* : ajoutez un nouveau conteneur Blob à un compte de stockage ou sélectionnez un conteneur existant, puis cliquez sur *Continuer*.
 +
-Lorsque vous utilisez un connecteur sur site, vous devez entrer l'abonnement Azure qui donne accès au conteneur existant ou au nouveau conteneur qui sera créé.
+Lorsque vous utilisez un connecteur sur site, vous devez entrer l'abonnement Azure qui donne accès au groupe de ressources.
 
+.. *Conteneur Azure* : ajoutez un nouveau conteneur Blob à un compte de stockage ou sélectionnez un conteneur existant, puis cliquez sur *Continuer*.
 +
 Le compte de stockage et les conteneurs qui apparaissent à cette étape appartiennent au groupe de ressources que vous avez sélectionné à l'étape précédente.
 
